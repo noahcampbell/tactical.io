@@ -1,0 +1,143 @@
+<!doctype html>  
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>1341 - A significant traffic drop off has occurred</title>
+  
+  <link rel="stylesheet" href="s/css/reset.css" />
+  <link rel="stylesheet" href="s/css/text.css" />
+  <link rel="stylesheet" href="s/css/960.css" />
+  <link rel="stylesheet" href="s/css/main.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  <script src="s/js/modernizr-1.7.min.js"></script>
+  <script src="s/js/jquery.countdown.min.js"></script>
+
+  
+  <link  href="http://fonts.googleapis.com/css?family=Permanent+Marker:regular" rel="stylesheet" type="text/css" >
+
+  <script language="javascript">
+  $(document).ready(function() {
+    var newYear = new Date(); 
+     $('#duration').countdown({since:  new Date(newYear.getFullYear() - 1, 1 - 1, 1), compact: true, 
+     format: 'DOWHM', description: ''});
+     
+     setInterval(function() { $('#timenow').text(new Date().toString()), 1000 });
+  });
+  </script>
+</head>
+
+<body>
+
+  <section id="comm" class="container_12">
+    <div class="grid_3">
+      <a href="mailto:1341+status@tactical.io">1341+status@tactical.io</a>
+    </div>
+    <div class="grid_2">
+      <a href="irc://tactical.io/#1341">#1341</a> tactical.io
+    </div>
+    <div class="grid_3"> 
+      Duration <span id="duration"></span>
+    </div>
+    <div id="timenow" class="grid_4">
+      Now
+    </div>
+    <div class="clear"></div>
+    <div id="what" class="grid_12">
+      A significant traffic drop off has occurred
+    </div>
+  </section>
+  
+  <section id="observation" class="container_12">
+    <div class="grid_6">
+      <div id="decision" class="decision">Decision: Increase the HA Proxy Buffer Count from 15 -&gt; 15</div>
+      
+      <div id="roster">
+        <span class="participant">
+        <img src="http://www.gravatar.com/avatar/aa8e2579aa34ef21a341bdd4205458bd?s=55"/>
+        </span>
+        
+        <span class="participant">
+        <img src="http://www.gravatar.com/avatar/f0f3f2a47ad7c2cb7ce143537552907d?s=55"/>
+        </span>
+      </div>
+    </div>
+    
+    <div id="kpis" class="grid_6">
+      <div class="kpi">
+      <span class="kpilabel">Error Rate Proxy</span>
+      <img src="http://chart.apis.google.com/chart?cht=lc&chs=200x50&chd=t:5.3,26.5,15.9,31.7,42.3,21.2,26.5,42.3,47.6,95.2,18.5,26.5,21.2,37.0,52.9,58.2,47.6,68.8,26.5,31.7,42.3&chco=999999&chls=1,1,0&chm=o,990000,0,20,4&chxt=r,x,y&chxs=0,990000,11,0,_|1,990000,1,0,_|2,990000,1,0,_&chxl=0:|8|1:||2:||&chxp=0,42.3">
+      </div>
+      <div class="pki">
+      <span class="kpilabel">Throughput Proxy</span>
+      <img src="http://chart.apis.google.com/chart?cht=lc&chs=200x50&chd=t:5.3,21.2,26.5,42.3,26.5,15.9,31.7,42.3,26.5,21.2,37.0,52.9,58.2,47.6,47.6,95.2,18.5,68.8,26.5,31.7,22.3&chco=999999&chls=1,1,0&chm=o,990000,0,20,4&chxt=r,x,y&chxs=0,990000,11,0,_|1,990000,1,0,_|2,990000,1,0,_&chxl=0:|5|1:||2:||&chxp=0,42.3">
+      </div>
+      <div class="pki">
+      <span class="kpilabel">Error Log Velocity</span>
+      <img src="http://chart.apis.google.com/chart?cht=lc&chs=200x50&chd=t:5.3,26.5,15.9,31.7,21.2,37.0,52.9,58.2,47.6,68.8,42.3,21.2,26.5,42.3,47.6,95.2,18.5,26.5,26.5,31.7,12.3&chco=999999&chls=1,1,0&chm=o,990000,0,20,4&chxt=r,x,y&chxs=0,990000,11,0,_|1,990000,1,0,_|2,990000,1,0,_&chxl=0:|3|1:||2:||&chxp=0,42.3">
+      </div>
+    </div>
+    
+    <div style="clear"></div>
+    
+    <div id="proposals" class="grid_12">
+      <div class="proposal">Proposal: Deploy New Host</div>
+      <div class="proposal">Proposal: Service Down</div>
+    </div>
+  
+  </section>
+  
+  <section id="activecomm" class="container_12">
+    <div class="grid_12">
+      <p><span>Ray:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet imperdiet metus a tempor.</p>
+      <p><span>Iceman:</span> Lorem ipsum dolor sit amet,</p>
+      <p><span>Ray:</span> consectetur adipiscing elit. Integer aliquet imperdiet metus a tempor.</p>
+      <p><span>Godfather:</span> dolor sit amet, consectetur adipiscing elit. Integer aliquet imperdiet metus a tempor.</p>
+    </div>  
+    
+
+    
+    <div id="message" class="grid_12">
+      <span>Ray</span>
+      <div id="chat"><input type="text"></div>
+    </div>
+    
+  </section>
+  
+  <section id="history" class="container_12">
+    <div class="grid_6">
+      <div id="decision" class="decision">Decision: Reload the HA Proxy Service</div>
+    </div>
+    <div class="grid_6 historical_kpis">
+      <div class="kpi">
+      <span class="kpilabel">Error Rate Proxy</span>
+      <img src="http://chart.apis.google.com/chart?cht=lc&chs=200x50&chd=t:5.3,26.5,15.9,31.7,42.3,21.2,26.5,42.3,47.6,95.2,18.5,26.5,21.2,37.0,52.9,58.2,47.6,68.8,26.5,31.7,42.3&chco=999999&chls=1,1,0&chm=o,990000,0,20,4&chxt=r,x,y&chxs=0,990000,11,0,_|1,990000,1,0,_|2,990000,1,0,_&chxl=0:|8|1:||2:||&chxp=0,42.3">
+      </div>
+      <div class="pki">
+      <span class="kpilabel">Throughput Proxy</span>
+      <img src="http://chart.apis.google.com/chart?cht=lc&chs=200x50&chd=t:5.3,21.2,26.5,42.3,26.5,15.9,31.7,42.3,26.5,21.2,37.0,52.9,58.2,47.6,47.6,95.2,18.5,68.8,26.5,31.7,22.3&chco=999999&chls=1,1,0&chm=o,990000,0,20,4&chxt=r,x,y&chxs=0,990000,11,0,_|1,990000,1,0,_|2,990000,1,0,_&chxl=0:|5|1:||2:||&chxp=0,42.3">
+      </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="grid_6">
+      <div id="decision" class="decision">Decision: Reload the HA Proxy Service</div>
+    </div>
+    <div class="grid_6 historical_kpis">
+      <div class="pki">
+      <span class="kpilabel">Throughput Proxy</span>
+      <img src="http://chart.apis.google.com/chart?cht=lc&chs=200x50&chd=t:5.3,21.2,26.5,42.3,26.5,15.9,31.7,42.3,26.5,21.2,37.0,52.9,58.2,47.6,47.6,95.2,18.5,68.8,26.5,31.7,22.3&chco=999999&chls=1,1,0&chm=o,990000,0,20,4&chxt=r,x,y&chxs=0,990000,11,0,_|1,990000,1,0,_|2,990000,1,0,_&chxl=0:|5|1:||2:||&chxp=0,42.3">
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

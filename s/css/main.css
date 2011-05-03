@@ -1,0 +1,95 @@
+body, textarea {
+  font: ‘Helvetica Neue’,arial,helvetica,sans-serif;
+  font-size: 14pt;
+  color: #333;
+}
+
+.pretty {
+  font-family: 'Permanent Marker', serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  text-shadow: none;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0.054em;
+  word-spacing: 0.082em;
+  line-height: 1.2;
+}
+
+#history {
+  margin-top: 35px;
+}
+
+#activecomm {
+  
+  margin-top: 35px;
+}
+
+section#ingres {
+  text-align: center;
+}
+
+#ingres textarea {
+  width: 100%;
+  height: 75px;
+}
+
+#comm {
+  font-size: 11pt;
+}
+
+#timenow, #duration {
+  text-align: right;
+}
+
+#what {
+  background: #CCC;
+  text-align: center;
+  font-size: 14pt;
+}
+
+#observation {
+  margin-top: 55px;
+}
+
+#decision {
+  border: 2px solid #CCC; 
+  background-color: #CCC;
+  border-radius: 5px; 
+  padding: 5px;
+  text-align: center;
+}
+
+#roster {
+  margin-top: 35px;
+  text-align: center;
+  
+}
+
+.participant {
+  margin-top: 25px;
+  margin-right: 33px;
+  border: 2px solid #CCC;
+  padding: 5px;
+}
+
+.kpi img {
+  text-align: right;
+}
+
+#proposals {
+  background-color: #CCC;
+  margin-top: 35px;
+  text-align: center;
+}
+
+.proposal {
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  background-color: white;
+  width: 340px;
+  margin: 15px;
+  padding: 5px;
+}
