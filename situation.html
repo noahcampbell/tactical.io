@@ -33,9 +33,9 @@
   </script>
 </head>
 
-<body>
+<body class="container_12">
 
-  <section id="comm" class="container_12">
+  <section id="comm">
     <div class="grid_3">
       <a href="mailto:1341+status@tactical.io">1341+status@tactical.io</a>
     </div>
@@ -54,7 +54,9 @@
     </div>
   </section>
   
-  <section id="observation" class="container_12">
+  <div>&nbsp;</div>
+  
+  <section id="observation">
     <div class="grid_6">
       <div id="decision" class="decision">Decision: Increase the HA Proxy Buffer Count from 15 -&gt; 15</div>
       
@@ -99,8 +101,10 @@
   
   </section>
   
-  <section class="container_12">
-    <div id="commstream" class="grid_12">
+  <div>&nbsp;</div>
+  
+  <section id="commstream">
+    <div class="grid_12">
       <p><span>Ray:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet imperdiet metus a tempor.</p>
       <p><span>Iceman:</span> Lorem ipsum dolor sit amet,</p>
       <p><span>Ray:</span> consectetur adipiscing elit. Integer aliquet imperdiet metus a tempor.</p>
@@ -112,33 +116,39 @@
     </div>
   </section>
   
-  <section id="history" class="container_12">
+  <div>&nbsp;</div>
+  
+  <section id="history">
     
-    <div class="historical_decision">
     <div class="grid_6">
       <div class="prevdecision">Decision: Reload the HA Proxy Service</div>
     </div>
     <div class="grid_6 historical_kpis">
-      <div class="kpi">
-      <span class="kpilabel">Error Rate Proxy</span>
-      <img src="http://chart.apis.google.com/chart?cht=lc&chs=200x50&chd=t:5.3,26.5,15.9,31.7,42.3,21.2,26.5,42.3,47.6,95.2,18.5,26.5,21.2,37.0,52.9,58.2,47.6,68.8,26.5,31.7,42.3&chco=999999&chls=1,1,0&chm=o,990000,0,20,4&chxt=r,x,y&chxs=0,990000,11,0,_|1,990000,1,0,_|2,990000,1,0,_&chxl=0:|8|1:||2:||&chxp=0,42.3">
-      </div>
-      <div class="kpi">
-      <span class="kpilabel">Throughput Proxy</span>
-      <img src="http://chart.apis.google.com/chart?cht=lc&chs=200x50&chd=t:5.3,21.2,26.5,42.3,26.5,15.9,31.7,42.3,26.5,21.2,37.0,52.9,58.2,47.6,47.6,95.2,18.5,68.8,26.5,31.7,22.3&chco=999999&chls=1,1,0&chm=o,990000,0,20,4&chxt=r,x,y&chxs=0,990000,11,0,_|1,990000,1,0,_|2,990000,1,0,_&chxl=0:|5|1:||2:||&chxp=0,42.3">
-      </div>
+      <table class="kpi">
+        <tr>
+          <td class="kpilabel">Error Log Velocity</td>
+          <td><img src="http://chart.apis.google.com/chart?cht=lc&chs=200x50&chd=t:5.3,26.5,15.9,31.7,21.2,37.0,52.9,58.2,47.6,68.8,42.3,21.2,26.5,42.3,47.6,95.2,18.5,26.5,26.5,31.7,12.3&chco=999999&chls=1,1,0&chm=o,990000,0,20,4&chxt=r,x,y&chxs=0,990000,11,0,_|1,990000,1,0,_|2,990000,1,0,_&chxl=0:|3|1:||2:||&chxp=0,42.3"></td>
+        </tr>
+        <tr class="kpi">
+          <td class="kpilabel">Tx/Sec</td>
+          <td><img src="http://style.org/lyrics/images/money.gif"></td>
+        </tr>
+      </table>
     </div>
-    </div>
+    
     <div class="clear"></div>
-    
+        
+
     <div class="grid_6">
       <div class="prevdecision">Decision: Reload the HA Proxy Service</div>
     </div>
     <div class="grid_6 historical_kpis">
-      <div class="kpi">
-      <span class="kpilabel">Throughput Proxy</span>
-      <img src="http://chart.apis.google.com/chart?cht=lc&chs=200x50&chd=t:5.3,21.2,26.5,42.3,26.5,15.9,31.7,42.3,26.5,21.2,37.0,52.9,58.2,47.6,47.6,95.2,18.5,68.8,26.5,31.7,22.3&chco=999999&chls=1,1,0&chm=o,990000,0,20,4&chxt=r,x,y&chxs=0,990000,11,0,_|1,990000,1,0,_|2,990000,1,0,_&chxl=0:|5|1:||2:||&chxp=0,42.3">
-      </div>
+      <table class="kpi">
+        <tr>
+          <td class="kpilabel">Tx/Sec</td>
+          <td><img src="http://style.org/lyrics/images/money.gif"></td>
+        </tr>
+      </table>
     </div>
   </section>
 

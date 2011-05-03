@@ -30,13 +30,17 @@
 				<key>StateType</key>
 				<string>PreviewTab</string>
 				<key>Title</key>
-				<string>What's Your Situation</string>
+				<string>1341 - A significant traffic drop off has occurred</string>
 				<key>URL</key>
 				<string>file:///Users/noahcampbell/Projects/tactical.io/situation.html</string>
 			</dict>
 			<dict>
 				<key>StateType</key>
 				<string>PreviewTab</string>
+				<key>Title</key>
+				<string>What's Your Situation</string>
+				<key>URL</key>
+				<string>file:///Users/noahcampbell/Projects/tactical.io/welcome.html</string>
 			</dict>
 		</array>
 	</dict>

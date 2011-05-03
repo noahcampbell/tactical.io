@@ -18,7 +18,7 @@ body, textarea, input {
 }
 
 #history {
-  margin-top: 35px;
+  margin-top: 15px;
 }
 
 section#ingres {
@@ -42,10 +42,6 @@ section#ingres {
   background: #CCC;
   text-align: center;
   font-size: 14pt;
-}
-
-#observation {
-  margin-top: 55px;
 }
 
 #decision, .prevdecision {
@@ -106,14 +102,13 @@ table.kpi td.kpilabel {
 
 #commstream {
   line-height: 1.2em;
-  margin-top: 15px;
 }
 
 #commstream p {
   margin-bottom: 0px;
 }
 
-#commstream > p > span {
+#commstream > div > p > span {
   font-weight: bold;
   color: #CCC;
 }
@@ -129,8 +124,4 @@ table.kpi td.kpilabel {
 
 #message input[type=text] {
   width: 100%;
-}
-
-.historical_decision {
-  margin-top: 75px;
 }
