@@ -59,10 +59,10 @@ section#ingres {
 }
 
 .participant {
-  margin-top: 25px;
-  margin-right: 33px;
+  margin: 5px;
   border: 2px solid #CCC;
   padding: 5px;
+  display: inline-block;
 }
 
 table.kpi {  
