@@ -1,4 +1,4 @@
-body, textarea {
+body, textarea, input {
   font: ‘Helvetica Neue’,arial,helvetica,sans-serif;
   font-size: 14pt;
   color: #333;
@@ -18,11 +18,6 @@ body, textarea {
 }
 
 #history {
-  margin-top: 35px;
-}
-
-#activecomm {
-  
   margin-top: 35px;
 }
 
@@ -53,7 +48,7 @@ section#ingres {
   margin-top: 55px;
 }
 
-#decision {
+#decision, .prevdecision {
   border: 2px solid #CCC; 
   background-color: #CCC;
   border-radius: 5px; 
@@ -74,13 +69,28 @@ section#ingres {
   padding: 5px;
 }
 
-.kpi img {
+table.kpi {  
+  width: 100%;
   text-align: right;
+}
+
+table.kpi td {
+  text-align: right;
+  vertical-align: middle;
+}
+
+table.kpi img {
+  text-align:right;
+}
+
+table.kpi td.kpilabel {
+  text-align: left;
+  height: 55px;
 }
 
 #proposals {
   background-color: #CCC;
-  margin-top: 35px;
+  margin-top: 15px;
   text-align: center;
 }
 
@@ -92,4 +102,35 @@ section#ingres {
   width: 340px;
   margin: 15px;
   padding: 5px;
+}
+
+#commstream {
+  line-height: 1.2em;
+  margin-top: 15px;
+}
+
+#commstream p {
+  margin-bottom: 0px;
+}
+
+#commstream > p > span {
+  font-weight: bold;
+  color: #CCC;
+}
+
+#message > div {
+  font-weight: bold;
+  color:  #CCC;
+}
+
+#message {
+  display: block;
+}
+
+#message input[type=text] {
+  width: 100%;
+}
+
+.historical_decision {
+  margin-top: 75px;
 }
