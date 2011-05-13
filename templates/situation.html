@@ -1,0 +1,171 @@
+<!doctype html>  
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>{{situation}} - {{situation_id}}</title>
+  
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/text.css" />
+  <link rel="stylesheet" href="/css/960.css" />
+  <link rel="stylesheet" href="/css/main.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  <script src="/js/date.js"></script>
+  <script src="/js/modernizr-1.7.min.js"></script>
+  <script src="/js/jquery.countdown.min.js"></script>
+
+  
+  <link  href="http://fonts.googleapis.com/css?family=Permanent+Marker:regular" rel="stylesheet" type="text/css" >
+
+  <script language="javascript">
+  var opened = Date.parse('{{opened}}');
+  $(document).ready(function() {
+    $('#duration').countdown({since: opened, compact: true, format: 'WHM', description: ''});
+     
+    setInterval(function() { $('#timenow').text(new Date().toUTCString()), 1000 });
+  });
+  </script>
+</head>
+
+<body class="container_12">
+  <header>
+    <div class="grid_2">tactical.io</div>
+    <div class="grid_7" id="observers">{{#participants}}
+        <img title="{{name}} <{{email}}>" src="http://www.gravatar.com/avatar/{{hash}}?s=20&d=retro"/>
+    {{/participants}}</div>
+    <div id="account" class="grid_3">{{account}}</div>
+  </header>
+  
+  <section id="comm">
+    <div class="grid_4">
+      <a href="mailto:{{email}}">{{email}}</a>
+    </div>
+    <div class="grid_3">
+      irc <a href="irc://irc.tactical.io/#{{irc}}">{{irc}}</a>
+    </div>
+    <div class="grid_2"> 
+      Duration <span id="duration"></span>
+    </div>
+    <div id="timenow" class="grid_3">
+      Now
+    </div>
+    <div class="clear"></div>
+    <div id="what" class="grid_12">
+      {{situation}}
+    </div>
+  </section>
+  
+  <div>&nbsp;</div>
+  
+  <section id="observation">
+    
+    <div id="kpis" class="grid_12">
+      <table class="kpi">
+        {{#current_monitors}}
+        <tr>
+          <td class="kpilabel">{{label}}</td>
+          <td><img src="{{url}}"></td>
+        </tr>
+        {{/current_monitors}}
+        <tr>
+          <td class="kpiadd" colspan="2"><input type="text" placeholder="What needs to be observed"></td>
+        </tr>
+      </table>
+    </div>
+  
+  </section>
+  
+  <div>&nbsp;</div>
+  
+  <section id="action">
+    
+    <div class="grid_8">
+      {{#current_decision}}
+      <div id="decision" class="decision">Decision: {{current_decision}}</div>
+      {{/current_decision}}
+      {{^current_decision}}
+      <div id="decision" class="decision"><input type="text" placeholder="What's the immediate action?"></div>
+      {{/current_decision}}
+    </div>
+    <div class="grid_4" id="roster">
+      {{#participants}}
+      <span class="participant">
+        <img title="{{name}} <{{email}}>" src="http://www.gravatar.com/avatar/{{hash}}?s=45&d=retro"/>
+      </span>
+      {{/participants}}
+    </div>
+    
+    
+    <div id="proposals" class="grid_12">
+      {{#current_proposals}}
+      <div class="proposal">Proposal: {{proposal}} <span class="vote">{{rate_up}} {{rate_down}}</span></div>
+      {{/current_proposals}}
+      <div class="proposal add"><input type="text" placeholder="What should be done next?"></div>
+    </div>  
+  
+  </action>
+  
+  <div>&nbsp;</div>
+  
+  <section id="commstream">
+    <div class="grid_12" id="commhistory">
+      <!-- <p><span>Ray:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet imperdiet metus a tempor.</p>
+      <p><span>Iceman:</span> Lorem ipsum dolor sit amet,</p>
+      <p><span>Ray:</span> consectetur adipiscing elit. Integer aliquet imperdiet metus a tempor.</p>
+      <p><span>Godfather:</span> dolor sit amet, consectetur adipiscing elit. Integer aliquet imperdiet metus a tempor.</p> -->
+    </div>  
+
+    <div class="grid_12" id="message">
+      <form id="chat"><input type="text" max="500" placeholder="{{owner_firstname}} &gt;"></form>
+    </div>
+  </section>
+  
+  <div>&nbsp;</div>
+  
+  <section id="history">
+    {{#history}}
+    <div class="grid_6">
+      <div class="prevdecision">Decision: {{decision}}</div>
+    </div>
+    <div class="grid_6 historical_kpis">
+      <table class="kpi">
+        {{#monitors}}
+        <tr>
+          <td class="kpilabel">{{label}}</td>
+          <td><img src="{{url}}"></td>
+        </tr>
+        {{/#monitor}}
+      </table>
+    </div>
+    
+    <div class="clear"></div>
+    
+    {{/history}}
+
+  </section>
+
+  <footer>
+  </footer>
+  
+  <script type="text/javascript">
+  
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-23322362-1']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  
+  </script>
+</body>
+
+</html>

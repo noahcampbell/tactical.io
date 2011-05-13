@@ -30,8 +30,24 @@ section#ingres {
   height: 75px;
 }
 
-#comm {
-  font-size: 11pt;
+#comm, header {
+  font-size: small;
+}
+
+header {
+  height: 30px;
+}
+
+header #observers {
+  text-align: center;
+}
+
+#observers img {
+  margin:2px;
+}
+
+header #account {
+  text-align:right;
 }
 
 #timenow, #duration {
@@ -53,9 +69,8 @@ section#ingres {
 }
 
 #roster {
-  margin-top: 35px;
+/*  margin-top: 15px;*/
   text-align: center;
-  
 }
 
 .participant {
@@ -122,6 +137,15 @@ table.kpi td.kpilabel {
   display: block;
 }
 
+#commhistory {
+  height: 250px;
+}
+
+input[type=text] {
+  width: 98%;
+  border: 1px solid #CCC;
+}
+
 #message input[type=text] {
-  width: 100%;
+  width: 98%;
 }

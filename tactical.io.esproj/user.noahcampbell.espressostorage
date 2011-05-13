@@ -4,45 +4,72 @@
 <dict>
 	<key>ESProjectShowHiddenFilesKey</key>
 	<false/>
+	<key>ESProjectWindowState</key>
+	<dict>
+		<key>ContentSize</key>
+		<string>{1343, 840}</string>
+		<key>ProjectURL</key>
+		<string>file://localhost/Users/noahcampbell/Projects/tactical.io/tactical.io.esproj/</string>
+		<key>StateType</key>
+		<string>ProjectWindow</string>
+		<key>TopLeftPoint</key>
+		<string>{232, 991}</string>
+	</dict>
+	<key>com.macrabbit.Espresso.FileManager.DisclosureCollapsed</key>
+	<false/>
+	<key>com.macrabbit.Espresso.FileManager.FileControllerState</key>
+	<dict>
+		<key>ExpandedURLs</key>
+		<array>
+			<string>file://localhost/Users/noahcampbell/Projects/tactical.io/js</string>
+			<string>file://localhost/Users/noahcampbell/Projects/tactical.io/templates</string>
+		</array>
+	</dict>
+	<key>com.macrabbit.Espresso.Publisher.DisclosureCollapsed</key>
+	<false/>
 	<key>com.macrabbit.Espresso.Workspace.Tabs</key>
 	<dict>
 		<key>Tabs</key>
 		<array>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/noahcampbell/Projects/tactical.io/welcome.html</string>
+				<string>file://localhost/Users/noahcampbell/Projects/tactical.io/templates/welcome.html</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/noahcampbell/Projects/tactical.io/s/css/main.css</string>
+				<string>file://localhost/Users/noahcampbell/Projects/tactical.io/css/main.css</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/noahcampbell/Projects/tactical.io/situation.html</string>
+				<string>file://localhost/Users/noahcampbell/Projects/tactical.io/templates/situation.html</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
 			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Users/noahcampbell/Projects/tactical.io/tactical-web.py</string>
 				<key>StateType</key>
-				<string>PreviewTab</string>
-				<key>Title</key>
-				<string>1341 - A significant traffic drop off has occurred</string>
-				<key>URL</key>
-				<string>file:///Users/noahcampbell/Projects/tactical.io/situation.html</string>
+				<string>DefaultTab</string>
 			</dict>
 			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Users/noahcampbell/Projects/tactical.io/templates/situation_unknown.html</string>
 				<key>StateType</key>
-				<string>PreviewTab</string>
-				<key>Title</key>
-				<string>What's Your Situation</string>
-				<key>URL</key>
-				<string>file:///Users/noahcampbell/Projects/tactical.io/welcome.html</string>
+				<string>DefaultTab</string>
+			</dict>
+			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Users/noahcampbell/Projects/tactical.io/templates/__init__.py</string>
+				<key>StateType</key>
+				<string>DefaultTab</string>
 			</dict>
 		</array>
 	</dict>
+	<key>com.macrabbit.Espresso.WorkspaceTabs.DisclosureCollapsed</key>
+	<false/>
 </dict>
 </plist>

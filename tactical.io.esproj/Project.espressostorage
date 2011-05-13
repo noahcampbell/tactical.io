@@ -33,7 +33,7 @@
 			<key>ESPublishServerStateTypeKey</key>
 			<string>SFTP</string>
 			<key>ESPublishServerStateUserKey</key>
-			<string>tactical</string>
+			<string>noahcampbell</string>
 		</dict>
 	</array>
 	<key>com.macrabbit.Espresso.Publisher.PublishServers.Order</key>
