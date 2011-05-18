@@ -2,6 +2,9 @@ import pystache
 import email
 import hashlib
 
+class Proposal(pystache.View):
+  template_path = 'templates'
+
 # The Situation Class
 class Situation(pystache.View):
 
@@ -31,17 +34,8 @@ class Situation(pystache.View):
       (name, email_address) = email.utils.parseaddr(self.source['owner'])
       if email_address:
         return email_address
-    
-  def current_decision(self):
-    return ""
-    
+  
   def current_monitors(self):
-    return []
-    
-  def proposed_decisions(self):
-    return []
-    
-  def current_proposals(self):
     return []
     
   def history(self):
@@ -68,4 +62,4 @@ class Situation(pystache.View):
     if k in self.source:
       return self.source[k]
     else:
-      raise Exception ("%s Not Found" % (k))
+      print ("'%s' Not Found" % (k))

@@ -19,6 +19,9 @@
   <script src="/js/date.js"></script>
   <script src="/js/modernizr-1.7.min.js"></script>
   <script src="/js/jquery.countdown.min.js"></script>
+  <script src="/js/mustache.js"></script>
+  <script src="https://github.com/tra/periodic/raw/master/jquery.periodic.js"></script>
+  <script src="/js/situation.js"></script>
 
   
   <link  href="http://fonts.googleapis.com/css?family=Permanent+Marker:regular" rel="stylesheet" type="text/css" >
@@ -38,7 +41,7 @@
     <div class="grid_2">tactical.io</div>
     <div class="grid_7" id="observers">{{#participants}}
         <img title="{{name}} <{{email}}>" src="http://www.gravatar.com/avatar/{{hash}}?s=20&d=retro"/>
-    {{/participants}}</div>
+    {{/participants}}&nbsp;</div>
     <div id="account" class="grid_3">{{account}}</div>
   </header>
   
@@ -65,7 +68,18 @@
   
   <section id="observation">
     
-    <div id="kpis" class="grid_12">
+    <div id="kpis_lane1" class="grid_4">
+      <div class="kpi"><img src="http://www.mrtg.org/rrdtool/stream-pop.png" width="100%"><div class="kpilabel">CPU Utilization</div></div>
+      <div class="kpi empty">&nbsp;</div>
+    </div>
+    
+    <div id="kpis_lane2" class="grid_4">
+      <div class="kpi"><img src="http://www.mrtg.org/rrdtool/stream-pop.png" width="100%"><div class="kpilabel">Web Tx/s</div></div>
+      <div class="kpi"><img src="http://www.mrtg.org/rrdtool/stream-pop.png" width="100%"><div class="kpilabel">Queue Length</div></div>
+    </div>
+    
+    <div id="kpis_lane3" class="grid_4">
+      <div class="kpi"><img src="http://www.mrtg.org/rrdtool/stream-pop.png" width="100%"><div class="kpilabel">Tx/s</div></div>
       <table class="kpi">
         {{#current_monitors}}
         <tr>
@@ -87,10 +101,10 @@
     
     <div class="grid_8">
       {{#current_decision}}
-      <div id="decision" class="decision">Decision: {{current_decision}}</div>
+      {{>decision}}
       {{/current_decision}}
       {{^current_decision}}
-      <div id="decision" class="decision"><input type="text" placeholder="What's the immediate action?"></div>
+      <div id="decision" class="decision"><input id="current_decision" type="text" placeholder="What's the immediate action?"></div>
       {{/current_decision}}
     </div>
     <div class="grid_4" id="roster">
@@ -103,22 +117,15 @@
     
     
     <div id="proposals" class="grid_12">
-      {{#current_proposals}}
-      <div class="proposal">Proposal: {{proposal}} <span class="vote">{{rate_up}} {{rate_down}}</span></div>
-      {{/current_proposals}}
-      <div class="proposal add"><input type="text" placeholder="What should be done next?"></div>
+      {{#current_proposals}}<div class="proposal">{{proposal}} <span class="vote">{{rate_up}} {{rate_down}}</span>&nbsp;</div>{{/current_proposals}}<div class="proposal add"><form id="proposal_form"><input id="proposal_add" type="text" placeholder="What should be done next?"></form></div>
     </div>  
   
-  </action>
+  </section>
   
   <div>&nbsp;</div>
   
   <section id="commstream">
     <div class="grid_12" id="commhistory">
-      <!-- <p><span>Ray:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquet imperdiet metus a tempor.</p>
-      <p><span>Iceman:</span> Lorem ipsum dolor sit amet,</p>
-      <p><span>Ray:</span> consectetur adipiscing elit. Integer aliquet imperdiet metus a tempor.</p>
-      <p><span>Godfather:</span> dolor sit amet, consectetur adipiscing elit. Integer aliquet imperdiet metus a tempor.</p> -->
     </div>  
 
     <div class="grid_12" id="message">

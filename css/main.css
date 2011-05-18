@@ -65,7 +65,9 @@ header #account {
   background-color: #CCC;
   border-radius: 5px; 
   padding: 5px;
-  text-align: center;
+  padding-left: 15px;
+  text-align: left;
+  margin-top: 15px;
 }
 
 #roster {
@@ -78,6 +80,18 @@ header #account {
   border: 2px solid #CCC;
   padding: 5px;
   display: inline-block;
+}
+
+.kpi {
+  text-align: center;
+  font-size: small;
+  height: 147px;
+  -webkit-transition: background 0.3s ease-in;
+}
+
+.kpi+.empty:hover {
+  background:#eee;
+
 }
 
 table.kpi {  
@@ -102,17 +116,19 @@ table.kpi td.kpilabel {
 #proposals {
   background-color: #CCC;
   margin-top: 15px;
-  text-align: center;
+  padding-bottom:5px;
+  text-align: left;
 }
 
 .proposal {
   border-radius: 5px;
-  text-align: center;
+  text-align: left;
   display: inline-block;
   background-color: white;
-  width: 340px;
-  margin: 15px;
-  padding: 5px;
+  width: 445px;
+  margin-top: 5px;
+  margin-left: 10px;
+  padding: 3px 5px;
 }
 
 #commstream {
