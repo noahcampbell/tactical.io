@@ -1,5 +1,58 @@
 $(document).ready(function() {
   
+  $('.kpiedit').click(function(el){
+    var ref = $(this).attr('ref')
+    var label = $(this).prev('.kpilabel')
+    var url = $(this).prevAll('img:first')
+    var editbar = $(this).parent('.kpi').nextAll('.kpieditbar:first')
+    var origlabel = label.text()
+    
+    var labelinput = editbar.children('input[name=kpieditlabel]')
+    labelinput.unbind('keyup')
+    labelinput.val(origlabel)
+    labelinput.keyup(function(){
+      label.text(labelinput.val())
+    })
+    
+    var urlinput = editbar.children('input[name=kpiediturl]')
+    urlinput.unbind('keyup')
+    var origurl = url.attr('src')
+    urlinput.val(origurl)
+    urlinput.keyup(function(){
+      url.attr('src', urlinput.val())
+    })
+    
+    
+    var done = editbar.children('.kpieditbardone')
+    done.unbind('click')
+    done.click(function(el){
+      $.ajax({
+        url: document.location + "/observations",
+        type: "POST",
+        data: ({ref: ref,
+            label: labelinput.val(),
+            url: urlinput.val()}),
+        success: function(data) {
+          editbar.slideUp('slow')
+          urlinput.unbind('keyup')
+          labelinput.unbind('keyup')      
+        }
+      })
+    })
+    
+    var cancel = editbar.children('.kpieditbarcancel')
+    cancel.unbind('click')
+    cancel.click(function(el){
+      label.text(origlabel)
+      url.attr('src', origurl)
+      editbar.slideUp('fast')
+      urlinput.unbind('keyup')
+      labelinput.unbind('keyup')
+    })
+    
+    editbar.slideDown('slow')
+  })
+
   
   
   

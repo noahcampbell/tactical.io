@@ -32,6 +32,8 @@
     $('#duration').countdown({since: opened, compact: true, format: 'WHM', description: ''});
      
     setInterval(function() { $('#timenow').text(new Date().toUTCString()), 1000 });
+    
+    mpmetrics.track("View Situation");
   });
   </script>
 </head>
@@ -68,31 +70,18 @@
   
   <section id="observation">
     
-    <div id="kpis_lane1" class="grid_4">
-      <div class="kpi"><img src="http://www.mrtg.org/rrdtool/stream-pop.png" width="100%"><div class="kpilabel">CPU Utilization</div></div>
-      <div class="kpi empty">&nbsp;</div>
-    </div>
-    
-    <div id="kpis_lane2" class="grid_4">
-      <div class="kpi"><img src="http://www.mrtg.org/rrdtool/stream-pop.png" width="100%"><div class="kpilabel">Web Tx/s</div></div>
-      <div class="kpi"><img src="http://www.mrtg.org/rrdtool/stream-pop.png" width="100%"><div class="kpilabel">Queue Length</div></div>
-    </div>
-    
-    <div id="kpis_lane3" class="grid_4">
-      <div class="kpi"><img src="http://www.mrtg.org/rrdtool/stream-pop.png" width="100%"><div class="kpilabel">Tx/s</div></div>
-      <table class="kpi">
-        {{#current_monitors}}
-        <tr>
-          <td class="kpilabel">{{label}}</td>
-          <td><img src="{{url}}"></td>
-        </tr>
-        {{/current_monitors}}
-        <tr>
-          <td class="kpiadd" colspan="2"><input type="text" placeholder="What needs to be observed"></td>
-        </tr>
-      </table>
-    </div>
-  
+    {{#current_monitors}}
+      {{#row}}
+      {{#label}}
+      <div class="grid_4 kpi"><img src="{{image_url}}" width="100%"><span class="kpilabel">{{label}}</span><span class="kpiedit" ref="{{ref}}">Edit</span></div>
+      {{/label}}
+      {{^label}}
+      <div class="grid_4 kpi empty">&nbsp;</div>
+      {{/label}}
+      {{/row}}
+      <div class="grid_12 kpieditbar">Label: <input name="kpieditlabel" type="text"> URL: <input name="kpiediturl" type="text"><span class="kpieditbardone">Done</span><span class="kpieditbarcancel">Cancel</span><br/>&nbsp;</div>
+    {{/current_monitors}}
+        
   </section>
   
   <div>&nbsp;</div>
@@ -161,20 +150,7 @@
 
   <footer>
   </footer>
-  
-  <script type="text/javascript">
-  
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-23322362-1']);
-    _gaq.push(['_trackPageview']);
-  
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  
-  </script>
+  {{>trackers}}
 </body>
 
 </html>

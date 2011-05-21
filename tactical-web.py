@@ -7,7 +7,7 @@ from templates import Situation
 
 bottle.debug(True)
 
-connection = pymongo.Connection('172.16.53.150')
+connection = pymongo.Connection('172.16.53.156')
 
 ACTIVITY_COUNTER='atx_ctr'
 
@@ -46,7 +46,6 @@ def add_proposal(id):
   
   data = request.forms.get("data")
   with activity_entry(id) as (situations, a_id):
-    print a_id
     result = situations.update({'situation_id': id}, {'$push': {'current_proposals': {'proposal': data, 'atx': a_id}}}, safe=True)
     if result['ok'] == 1:
       return redirect('/situation/%s/activity/%d' % (id, a_id))
@@ -61,7 +60,39 @@ def view_activity(id, aid):
       pass
     else:
       raise HTTPError(404)
+
+@route('/situation/:id#.+#/observations', method='POST')
+def add_observation(id):
+  ref = request.forms.get('ref')
+  label = request.forms.get('label')
+  url = request.forms.get('url')
+  from_pos = request.forms.get('from')
+  with activity_entry(id) as (situations, a_id):
+    if from_pos: # move
+      pass
+    else:
+      situation = situations.find_one({'situation_id': id})
+      if 'observations' not in situation:
+        situation['observations'] = dict()
+      obs = situation['observations']
+      if ref not in obs:
+        obs[ref] = dict()
+        
+      ob = obs[ref]
+      ob['label'] = label
+      ob['url'] = url
+      situations.save(situation)
+
+@route('/situation/:id#.+#/observations')
+def view_observations(id):
+  with situationdb() as situations:
+    situation = situations.find_one({'situation_id': id},)
+    
+    if not situation or 'observations' not in situation:
+      return {}
       
+    return situation['observations']
+     
 @route('/situation/:id#.+#/activity')
 def activity_stream(id):
   return static_file('%s/activity' % id, root="test/activity", mimetype="text/html")
@@ -82,7 +113,6 @@ def situation_update(id):
       
       if update_data:  
         result = sdb.situations.update({"situation_id": id}, update_data, safe=True)
-        print result
         if result['ok'] == 1:
           return "ok"
       
@@ -112,7 +142,6 @@ def server_static(base,path):
   
 @route('/t/:path#.+.mustache#')
 def templates(path):
-  print path
   return static_file(path, root='templates')
 
 @route('/favicon.ico')

@@ -83,15 +83,40 @@ header #account {
 }
 
 .kpi {
-  text-align: center;
+/*  text-align: center;*/
+  vertical-align: bottom;
   font-size: small;
   height: 147px;
+  
   -webkit-transition: background 0.3s ease-in;
 }
 
-.kpi+.empty:hover {
+.kpi:hover {
   background:#eee;
+}
 
+.kpiedit {
+  opacity:0.0;
+}
+
+.kpieditbar {
+  display:none;
+}
+
+.kpieditbar input[name=kpiediturl] {
+  width:500px;
+}
+
+.kpieditbar input[name=kpieditlabel] {
+  width:250px;
+}
+
+.kpi:hover .kpiedit {
+  opacity:0.5;
+}
+
+.kpi:hover > .kpiedit:hover {
+  opacity:1.0;
 }
 
 table.kpi {  

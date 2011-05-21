@@ -36,7 +36,33 @@ class Situation(pystache.View):
         return email_address
   
   def current_monitors(self):
-    return []
+    
+    if 'observations' in self.source:
+      matrix = []
+      r = 1
+      have_observation = True
+      while have_observation:
+        row = dict(row=[])
+        have_observation = False
+        for c in xrange(1, 4):
+          p = "r%dc%d" % (r,c)
+          obs = self.source['observations']
+          if p in obs:
+            have_observation = True
+            row['row'].append({'ref':p, 'image_url': obs[p]['url'], 'label': obs[p]['label']})
+          else:
+            row['row'].append({'ref':p})
+        if have_observation:
+          matrix.append(row)
+        r += 1
+        
+      return matrix
+          
+    ### Example???
+    return [{'row': [{'image_url': 'http://www.mrtg.org/rrdtool/stream-pop.png', 'label': 'r1c1'},
+    {'image_url': 'http://www.mrtg.org/rrdtool/stream-pop.png', 'label': 'r1c2'},
+    {'image_url': 'http://www.mrtg.org/rrdtool/stream-pop.png', 'label': 'r1c3'}]},
+    {'row':[{},{'image_url': 'http://www.mrtg.org/rrdtool/stream-pop.png', 'label': 'r2c2'}, {}]}]
     
   def history(self):
     return []
