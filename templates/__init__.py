@@ -41,20 +41,23 @@ class Situation(pystache.View):
       matrix = []
       r = 1
       have_observation = True
-      while have_observation:
+      count = len(self.source['observations'])
+      while count > 0 or r == 1:
         row = dict(row=[])
         have_observation = False
         for c in xrange(1, 4):
           p = "r%dc%d" % (r,c)
           obs = self.source['observations']
           if p in obs:
+            count -= 1
             have_observation = True
             row['row'].append({'ref':p, 'image_url': obs[p]['url'], 'label': obs[p]['label']})
           else:
             row['row'].append({'ref':p})
-        if have_observation:
-          matrix.append(row)
+          
+        matrix.append(row)
         r += 1
+        
         
       return matrix
           

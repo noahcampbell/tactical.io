@@ -1,7 +1,26 @@
 $(document).ready(function() {
   
+  $('.kpiremove').click(function(el){
+    var edit = $(this).prevAll('.kpiedit:first')
+    var ref = edit.attr('ref')
+    
+    $.ajax({
+      url: document.location + "/observations",
+      type: "DELETE",
+      data: ({ref: ref}),
+      success: function(data) {
+        edit.siblings().remove()
+      }
+    })
+  })
+  
   $('.kpiedit').click(function(el){
+    
     var ref = $(this).attr('ref')
+    if(!$(this).prev('.kpilabel').length) {
+      $(this).before("<img src='' width='100%'><span class='kpilabel'></span>")
+      $(this).after("<span class='kpiremove'>Remove</span>")
+    }
     var label = $(this).prev('.kpilabel')
     var url = $(this).prevAll('img:first')
     var editbar = $(this).parent('.kpi').nextAll('.kpieditbar:first')

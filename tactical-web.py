@@ -7,7 +7,7 @@ from templates import Situation
 
 bottle.debug(True)
 
-connection = pymongo.Connection('172.16.53.156')
+connection = pymongo.Connection('172.16.53.159')
 
 ACTIVITY_COUNTER='atx_ctr'
 
@@ -82,6 +82,23 @@ def add_observation(id):
       ob['label'] = label
       ob['url'] = url
       situations.save(situation)
+      
+@route('/situation/:id#.+#/observations', method='DELETE')
+def remove_observation(id):
+  ref = request.forms.get('ref')
+  with activity_entry(id) as (situations, a_id):
+    situation = situations.find_one({'situation_id': id})
+    if 'observations' not in situation:
+      raise HTTPError(404)
+      
+    obs = situation['observations']
+    
+    if ref not in obs:
+      raise HTTPError(404)
+    else:
+      del obs[ref]
+    
+    situations.save(situation)
 
 @route('/situation/:id#.+#/observations')
 def view_observations(id):

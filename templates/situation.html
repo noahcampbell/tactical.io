@@ -73,10 +73,10 @@
     {{#current_monitors}}
       {{#row}}
       {{#label}}
-      <div class="grid_4 kpi"><img src="{{image_url}}" width="100%"><span class="kpilabel">{{label}}</span><span class="kpiedit" ref="{{ref}}">Edit</span></div>
+      <div class="grid_4 kpi"><img src="{{image_url}}" width="100%"><span class="kpilabel">{{label}}</span><span class="kpiedit" ref="{{ref}}">Edit</span><span class="kpiremove">Remove</span></div>
       {{/label}}
       {{^label}}
-      <div class="grid_4 kpi empty">&nbsp;</div>
+      <div class="grid_4 kpi"><span class="kpiedit" ref="{{ref}}">Edit</span>&nbsp;</div>
       {{/label}}
       {{/row}}
       <div class="grid_12 kpieditbar">Label: <input name="kpieditlabel" type="text"> URL: <input name="kpiediturl" type="text"><span class="kpieditbardone">Done</span><span class="kpieditbarcancel">Cancel</span><br/>&nbsp;</div>
